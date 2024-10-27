@@ -1,0 +1,84 @@
+EJERCICIO_PRIMERO
+n =int(input("ingrese un numero de 5 cifras: "))
+d1 = n//10000
+d2 = (n%10000)//1000
+d3 = (n%1000)//100
+d4 = (n%100)//10
+d5 = n%10
+print("d1= ",d1)
+print("d2= ",d2)
+print("d3= ",d3)
+print("d4= ",d4)
+print("d5= ",d5)
+if d1 > d2 and d1 > d3 and d1 > d4 and d1 > d5:
+    mayor_digito = d1
+elif d2 > d1 and d2 > d3 and d2 > d4 and d2 > d5:
+    mayor_digito = d2
+elif d3 > d1 and d3 > d2 and d3 > d4 and d3 > d5:
+    mayor_digito = d3
+elif d4 > d1 and d4 > d2 and d4 > d3 and d4 > d5:
+    mayor_digito = d4
+else:
+    mayor_digito = d5
+print("el digito mayor es: ",mayor_digito)
+numero_invertido= (d5*10000)+(d4*1000)+(d3*100)+(d2*10)+(d1*1)
+print("el numero invertido es: ",numero_invertido)
+
+EJERCICIO_1
+n = int(input("Ingrese el número de términos para la Serie: "))
+resultado = []
+#El range() genera una secuencia de números 
+for i in range(n):
+    if i % 2 == 0:  
+        #El método append()añade un elemento al final de la lista.
+        resultado.append(1 + 2 * (i // 2))
+    else:  
+        resultado.append(5 + 2 * ((i - 1) // 2))
+print(resultado)
+
+EJERCICIO_3
+n = int(input("Ingrese el número de términos para la Serie : "))
+resultado = []
+for i in range(1, n + 1):
+    if i % 2 == 1:  
+        resultado.append(2 * ((i + 1) // 2))
+    else: 
+        resultado.append(2 * (i // 2) - 1)
+
+print(resultado)
+
+EJERCICIO_4
+n = int(input("Ingrese el número de términos para la Serie : "))
+vocales = ['a', 'e', 'i', 'o', 'u']
+resultado = []
+for i in range(n):
+    numero = (i // 5) + 1  
+    vocal = vocales[i % 5]  
+    resultado.append(f"{vocal}{numero}{vocal}")
+print(resultado)
+
+EJERCICIO_5
+n = int(input("Ingrese el número de términos para la Serie : "))
+letras = ['a', 'e']
+resultado = []
+numero = 1
+for i in range(n):
+    if i % 4 < 2:  
+        resultado.append(letras[i % 2])
+    else:  
+        resultado.append(str(numero))
+        if i % 4 == 3: 
+            numero += 1
+print(resultado)
+
+EJERCICIO_6
+n = int(input("Ingrese el número de términos para la Serie : "))
+resultado = [9, 5, 1]
+for i in range(3, n):
+    siguiente = resultado[i - 1] + resultado[i - 2] + resultado[i - 3]  # Suma de los 3 anteriores
+    resultado.append(siguiente)
+print(resultado[:n])
+
+
+lo que sirvio de guia fue:
+https://ellibrodepython.com/range-python
